@@ -6,7 +6,7 @@ const helpers = require('./test-helpers')
 describe('Auth Endpoints', function() {
   let db
 
-  const { testUsers } = helpers.makeArticlesFixtures()
+  const { testUsers } = helpers.makeGovFixtures()
   const testUser = testUsers[0]
 
   before('make knex instance', () => {
@@ -23,7 +23,7 @@ describe('Auth Endpoints', function() {
 
   afterEach('cleanup', () => helpers.cleanTables(db))
 
-  describe(`POST /api/auth/login`, () => {
+  describe(`POST /api/authorization/login`, () => {
     beforeEach('insert users', () =>
       helpers.seedUsers(
         db,
@@ -81,7 +81,7 @@ describe('Auth Endpoints', function() {
         }
       )
       return supertest(app)
-        .post('/api/auth/login')
+        .post('/api/authorization/login')
         .send(userValidCreds)
         .expect(200, {
           authToken: expectedToken,
