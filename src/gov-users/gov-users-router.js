@@ -1,6 +1,7 @@
 const express = require('express')
 const path = require('path')
 const GovUsersService = require('./gov-users-service')
+const { requireAuth } = require('../middleware/jwt-auth')
 
 const usersRouter = express.Router()
 const jsonBodyParser = express.json()
@@ -57,5 +58,32 @@ usersRouter
             })
             .catch(next)
     })
+
+    usersRouter
+    .route('/:user_id')
+    .all(requireAuth, checkUserExists)
+    .get((req, res) => {
+        return res.json(GovUsersService.serializeUser(res.user))
+    })
+    
+    /* async/await syntax for promises */
+    async function checkUserExists(req, res, next) {
+        try {
+            const user = await GovUsersService.getById(
+            req.app.get('db'),
+            req.params.user_id
+        )
+    
+        if (!user)
+            return res.status(404).json({
+            error: `User doesn't exist`
+            })
+    
+        res.user = user
+        next()
+        } catch (error) {
+        next(error)
+        }
+  }
 
     module.exports = usersRouter

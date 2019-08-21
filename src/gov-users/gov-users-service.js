@@ -1,5 +1,6 @@
 const bcrypt = require('bcryptjs')
 const xss = require('xss')
+const Treeize = require('treeize')
 
 const REGEX_UPPER_LOWER_NUMBER_SPECIAL = /(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&])[\S]+/
 
@@ -16,6 +17,12 @@ const GovUsersService = {
             .into('knowyourgov_users')
             .returning('*')
             .then(([user]) => user)
+    },
+    getById(db, id) {
+        return db
+          .from('knowyourgov_users')
+          .where('id', id)
+          .first()
     },
     validatePassword(password) {
         if (password.length < 8) {
@@ -35,13 +42,34 @@ const GovUsersService = {
     hashPassword(password) {
         return bcrypt.hash(password, 12)
     },
+    serializeUsers(users) {
+        return users.map(this.serializeUser)
+      },
     serializeUser(user) {
+
+        const userTree = new Treeize()
+
+        const userData = userTree.grow([ user ]).getData()[0]
+
         return {
-            id: user.id,
-            user_name: xss(user.full_name),
-            date_created: new Date(user.date_created)
+            id: userData.id,
+            user_name: xss(userData.user_name),
+            date_created: new Date(userData.date_created),
+            street_address: userData.street_address,
+            city: userData.city,
+            state_code: userData.state_code,
         }
     }
 }
+
+// const userFields = [
+//     'usr.id AS user:id',
+//     'usr.user_name AS user:user_name',
+//     'usr.date_created AS user:date_created',
+//     'usr.street_address AS user:street_address',
+//     'usr.city AS user:city',
+//     'usr.state_code AS user:state_code',
+//   ]
+
 
 module.exports = GovUsersService
