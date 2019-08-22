@@ -1,28 +1,83 @@
-# Express Boilerplate!
+# Know Your Gov
 
-This is a boilerplate project used for starting new projects!
+Check it out! 
 
-## Set up
+![Know Your Gov App Screenshot](/src/images/knowyourgov_home.png "Know Your Gov")  
 
-Complete the following steps to start a new project (NEW-PROJECT-NAME):
+**Summary**
 
-1. Clone this repository to your local machine `git clone BOILERPLATE-URL NEW-PROJECTS-NAME`
-2. `cd` into the cloned repository
-3. Make a fresh start of the git history for this project with `rm -rf .git && git init`
-4. Install the node dependencies `npm install`
-5. Move the example Environment file to `.env` that will be ignored by git and read by the express server `mv example.env .env`
-6. Edit the contents of the `package.json` to use NEW-PROJECT-NAME instead of `"name": "express-boilerplate",`
+Know Your Gov provides users with their elected representatives information at the state and federal level. The application retrieves their representatives data through their physical address. The user can choose to do a one time search or register their address with the app to load their representatives information. The content is provided by Google's Civic Info Api and gives the user a way to contact their elected representative by phone, website, and email. Know Your Gov is an excellent a way of finding out who represents you and to hold them accountable!
 
-## Scripts
+**Features** 
+- Find out your representatives information at the state and federal levels
+- Register for an account to save your representatives information for reference
 
-Start the application `npm start`
+**APIs Used**
+- Google Civic Info API
+- knowyourgov (backend API)
 
-Start nodemon for the application `npm run dev`
+**Stack Used**
+- React.js
+- CSS
+- Node.js
+- Express
+- PostgreSQL
 
-Run the tests `npm test`
+## Scripts 
 
-Seeding the database `psql -U rod -d knowyourgov -a -f seeds/seed.knowyourgov_tables.sql`
+- Start the application `npm start`
+
+- Start nodemon for the application `npm run dev`
+
+- Run the tests `npm test`
+
+- Seeding the database `psql -U rod -d knowyourgov -a -f seeds/seed.knowyourgov_tables.sql`
 
 ## Deploying
 
 When your new project is ready for deployment, add a new Heroku application with `heroku create`. This will make a new git remote called "heroku" and you can then `npm run deploy` which will push to this remote's master branch.
+
+**API Documentation** 
+
+**Know Your Gov API**
+
+Login Authentication:
+
+- /authorization/login
+
+Post user to database:
+
+- /users
+
+Get user profile from database:
+
+- /users/${userId}
+
+**Google Civic Info API** 
+
+- API Documentation - https://developers.google.com/civic-information/docs/v2/
+
+**Allowed HTTPs Requests**
+
+- POST: Add a user to the database or login to the app
+
+- GET: Retrieve a user from the database 
+
+**HTTP Responses** 
+
+- 200 OK - Successful login response or successful get user request
+
+- 201 Created - The request was successful and the user is created
+
+- 204 No Content - The request was successful, but no content was returned
+
+- 400 Bad Request - The request was not understood or missing required parameters
+
+- 401 Unauthorized - Authentication failed or user did not have correct login permissions
+
+- 404 Not Found - Resource was not found
+
+![Know Your Gov App Reps Screenshot](/src/images/knowyourgov_reps.png "Know Your Gov Reps")
+
+
+
