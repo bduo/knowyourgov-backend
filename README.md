@@ -1,8 +1,6 @@
 # Know Your Gov
 
-Check it out! 
-
-![Know Your Gov App Screenshot](/src/images/knowyourgov_home.png "Know Your Gov")  
+Check it out!  
 
 **Summary**
 
@@ -43,15 +41,15 @@ When your new project is ready for deployment, add a new Heroku application with
 
 Login Authentication:
 
-- /authorization/login
+- `/authorization/login`
 
 Post user to database:
 
-- /users
+- `/users`
 
 Get user profile from database:
 
-- /users/${userId}
+- `/users/${userId}`
 
 **Google Civic Info API** 
 
@@ -59,25 +57,23 @@ Get user profile from database:
 
 **Allowed HTTPs Requests**
 
-- POST: Add a user to the database or login to the app
+- `POST`: Add a user to the database or login to the app
 
-- GET: Retrieve a user from the database 
+- `GET`: Retrieve a user from the database 
 
 **HTTP Responses** 
 
-- 200 OK - Successful login response or successful get user request
+- `200 OK` - Successful login response or successful get user request
 
-- 201 Created - The request was successful and the user is created
+- `201 Created` - The request was successful and the user is created
 
-- 204 No Content - The request was successful, but no content was returned
+- `204 No Content` - The request was successful, but no content was returned
 
-- 400 Bad Request - The request was not understood or missing required parameters
+- `400 Bad Request` - The request was not understood or missing required parameters
 
-- 401 Unauthorized - Authentication failed or user did not have correct login permissions
+- `401 Unauthorized` - Authentication failed or user did not have correct login permissions
 
-- 404 Not Found - Resource was not found
-
-![Know Your Gov App Reps Screenshot](/src/images/knowyourgov_reps.png "Know Your Gov Reps")
+- `404 Not Found` - Resource was not found
 
 
 
