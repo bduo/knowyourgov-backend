@@ -23,16 +23,16 @@ Know Your Gov provides users with their elected representatives information at t
 
 ## Scripts 
 
-### Start the application 
+**Start the application** 
 - `npm start`
 
-### Start nodemon for the application 
+**Start nodemon for the application** 
 - `npm run dev`
 
-### Run the tests 
+**Run the tests** 
 - `npm test`
 
-### Seeding the database 
+**Seeding the database** 
 - `psql -U rod -d knowyourgov -a -f seeds/seed.knowyourgov_tables.sql`
 
 ## Deploying
@@ -43,15 +43,15 @@ When your new project is ready for deployment, add a new Heroku application with
 
 ## Know Your Gov API
 
-### Login Authentication
+**Login Authentication**
 
 - `/authorization/login`
 
-### Post user to database
+**Post user to database**
 
 - `/users`
 
-### Get user profile from database
+**Get user profile from database**
 
 - `/users/${userId}`
 
