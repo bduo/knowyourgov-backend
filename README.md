@@ -39,11 +39,11 @@ Know Your Gov provides users with their elected representatives information at t
 
 When your new project is ready for deployment, add a new Heroku application with `heroku create`. This will make a new git remote called "heroku" and you can then `npm run deploy` which will push to this remote's master branch.
 
-## API Documentation
+# API Documentation
 
 ## Know Your Gov API
 
-###Login Authentication
+### Login Authentication
 
 - `/authorization/login`
 
