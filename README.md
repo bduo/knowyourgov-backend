@@ -2,19 +2,19 @@
 
 Check it out!  
 
-**Summary**
+## Summary 
 
 Know Your Gov provides users with their elected representatives information at the state and federal level. The application retrieves their representatives data through their physical address. The user can choose to do a one time search or register their address with the app to load their representatives information. The content is provided by Google's Civic Info Api and gives the user a way to contact their elected representative by phone, website, and email. Know Your Gov is an excellent a way of finding out who represents you and to hold them accountable!
 
-**Features** 
+## Features
 - Find out your representatives information at the state and federal levels
 - Register for an account to save your representatives information for reference
 
-**APIs Used**
+## APIs Used
 - Google Civic Info API
 - knowyourgov (backend API)
 
-**Stack Used**
+## Stack Used 
 - React.js
 - CSS
 - Node.js
@@ -35,7 +35,7 @@ Know Your Gov provides users with their elected representatives information at t
 
 When your new project is ready for deployment, add a new Heroku application with `heroku create`. This will make a new git remote called "heroku" and you can then `npm run deploy` which will push to this remote's master branch.
 
-**API Documentation** 
+## API Documentation
 
 **Know Your Gov API**
 
