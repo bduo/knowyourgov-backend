@@ -1,6 +1,6 @@
 # Know Your Gov
 
-Check it out!  
+## Check it out!  
 
 ## Summary 
 
@@ -23,13 +23,17 @@ Know Your Gov provides users with their elected representatives information at t
 
 ## Scripts 
 
-- Start the application `npm start`
+### Start the application 
+- `npm start`
 
-- Start nodemon for the application `npm run dev`
+### Start nodemon for the application 
+- `npm run dev`
 
-- Run the tests `npm test`
+### Run the tests 
+- `npm test`
 
-- Seeding the database `psql -U rod -d knowyourgov -a -f seeds/seed.knowyourgov_tables.sql`
+### Seeding the database 
+- `psql -U rod -d knowyourgov -a -f seeds/seed.knowyourgov_tables.sql`
 
 ## Deploying
 
@@ -37,31 +41,31 @@ When your new project is ready for deployment, add a new Heroku application with
 
 ## API Documentation
 
-### Know Your Gov API
+## Know Your Gov API
 
-Login Authentication:
+###Login Authentication
 
 - `/authorization/login`
 
-Post user to database:
+### Post user to database
 
 - `/users`
 
-Get user profile from database:
+### Get user profile from database
 
 - `/users/${userId}`
 
-### Google Civic Info API
+## Google Civic Info API
 
 - API Documentation - https://developers.google.com/civic-information/docs/v2/
 
-### Allowed HTTPs Requests
+## Allowed HTTPs Requests
 
 - `POST`: Add a user to the database or login to the app
 
 - `GET`: Retrieve a user from the database 
 
-### HTTP Responses
+## HTTP Responses
 
 - `200 OK` - Successful login response or successful get user request
 
