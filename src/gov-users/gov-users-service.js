@@ -62,14 +62,4 @@ const GovUsersService = {
     }
 }
 
-// const userFields = [
-//     'usr.id AS user:id',
-//     'usr.user_name AS user:user_name',
-//     'usr.date_created AS user:date_created',
-//     'usr.street_address AS user:street_address',
-//     'usr.city AS user:city',
-//     'usr.state_code AS user:state_code',
-//   ]
-
-
 module.exports = GovUsersService
