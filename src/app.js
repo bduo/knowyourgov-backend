@@ -15,8 +15,8 @@ app.use(morgan(morganOption))
 app.use(cors())
 app.use(helmet())
 
-app.use('/authorization', authRouter)
-app.use('/users', govUsersRouter)
+app.use('/api/authorization', authRouter)
+app.use('/api/users', govUsersRouter)
 
 app.use(function errorHandler(error, req, res, next) {
     let response
