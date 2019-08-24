@@ -3,6 +3,5 @@ module.exports = {
     NODE_ENV: process.env.NODE_ENV || 'development',
     DB_URL: process.env.DB_URL || 'postgresql://rod@localhost/knowyourgov',
     JWT_SECRET: process.env.JWT_SECRET || 'rodthebod',
-    API_BASE_URL: process.env.REACT_APP_API_BASE_URL ||
-    "http://localhost:3000/api"
+    API_BASE_URL: process.env.REACT_APP_API_BASE_URL || "http://localhost:3000/api"
 }
