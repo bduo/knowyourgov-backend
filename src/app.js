@@ -19,10 +19,6 @@ app.get('/', (req, res) => {
     res.send('Hello, world!')
 })
 
-app.get('/users', (req, res) => {
-    res.send('Hello, world!')
-})
-
 app.use('/api/authorization', authRouter)
 app.use('/api/users', govUsersRouter)
 
