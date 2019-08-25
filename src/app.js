@@ -22,6 +22,17 @@ app.get('/', (req, res) => {
 app.use('/api/authorization', authRouter)
 app.use('/api/users', govUsersRouter)
 
+if (process.env.NODE_ENV === 'production') {
+    // Express will serve up production assets
+    app.use(express.static('client/build'));
+  
+    // Express serve up index.html file if it doesn't recognize route
+    const path = require('path');
+    app.get('*', (req, res) => {
+      res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+    });
+  }
+
 app.use(function errorHandler(error, req, res, next) {
     let response
     if (NODE_ENV === 'production') {
