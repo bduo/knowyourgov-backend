@@ -14,7 +14,7 @@
 **Seeding the database** 
 - `psql -U rod -d knowyourgov -a -f seeds/seed.knowyourgov_tables.sql`
 
-## API Endpoints
+## Know Your Gov API Endpoints
 
 **Login Authentication**
 
