@@ -1,8 +1,4 @@
-# Know Your Gov
-
-**Check it out!** - https://knowyourgov.brandonelhaj.now.sh
-
-# API Documentation
+# Know Your Gov API Documentation
 
 ## Scripts 
 
@@ -18,7 +14,7 @@
 **Seeding the database** 
 - `psql -U rod -d knowyourgov -a -f seeds/seed.knowyourgov_tables.sql`
 
-## Know Your Gov API
+## Know Your Gov API Endpoints
 
 **Login Authentication**
 
