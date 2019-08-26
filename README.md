@@ -35,10 +35,6 @@ Know Your Gov provides users with their elected representatives information at t
 **Seeding the database** 
 - `psql -U rod -d knowyourgov -a -f seeds/seed.knowyourgov_tables.sql`
 
-## Deploying
-
-When your new project is ready for deployment, add a new Heroku application with `heroku create`. This will make a new git remote called "heroku" and you can then `npm run deploy` which will push to this remote's master branch.
-
 # API Documentation
 
 ## Know Your Gov API
