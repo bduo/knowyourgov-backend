@@ -4,6 +4,7 @@ process.env.JWT_SECRET = 'test-jwt-secret'
 process.env.TEST_DB_URL = process.env.TEST_DB_URL || "postgresql://rod@localhost/knowyourgov-test"
 
 require('dotenv').config()
+
 const { expect } = require('chai')
 const supertest = require('supertest')
 
