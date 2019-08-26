@@ -53,7 +53,7 @@ When your new project is ready for deployment, add a new Heroku application with
 
 **Get user profile from database**
 
-- `GET /users/${userId}`
+- `GET /users/:user_id`
 
 ## Google Civic Info API
 
