@@ -2,24 +2,7 @@
 
 **Check it out!** - https://knowyourgov.brandonelhaj.now.sh
 
-## Summary 
-
-Know Your Gov provides users with their elected representatives information at the state and federal level. The application retrieves their representatives data through their physical address. The user can choose to do a one time search or register their address with the app to load their representatives information. The content is provided by Google's Civic Info Api and gives the user a way to contact their elected representative by phone, website, and email. Know Your Gov is an excellent a way of finding out who represents you and to hold them accountable!
-
-## Features
-- Find out your representatives information at the state and federal levels
-- Register for an account to save your representatives information for reference
-
-## APIs Used
-- Google Civic Info API
-- knowyourgov (backend API)
-
-## Stack Used 
-- React.js
-- CSS
-- Node.js
-- Express
-- PostgreSQL
+# API Documentation
 
 ## Scripts 
 
@@ -34,8 +17,6 @@ Know Your Gov provides users with their elected representatives information at t
 
 **Seeding the database** 
 - `psql -U rod -d knowyourgov -a -f seeds/seed.knowyourgov_tables.sql`
-
-# API Documentation
 
 ## Know Your Gov API
 
