@@ -34,9 +34,9 @@
 
 ## Allowed HTTPs Requests
 
-- `POST`: Add a user to the database or login to the app
+- `POST` Add a user to the database or login to the app
 
-- `GET`: Retrieve a user from the database 
+- `GET` Retrieve a user from the database 
 
 ## HTTP Responses
 
