@@ -11,6 +11,9 @@
 **Run the tests** 
 - `npm test`
 
+**Seeding the database** 
+- `psql -U database-user -d database-name -a -f seeds/seed.knowyourgov_tables.sql`
+
 ## Know Your Gov API Endpoints
 
 **Login Authentication**
