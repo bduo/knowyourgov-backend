@@ -4,7 +4,7 @@ function makeUsersArray() {
       id: 1,
       user_name: 'testuser1',
       password: '$2a$12$PzeNfOF2a94vUPBL7Wg4I.RCZydnhqc8Rehlw1DGkAlbJKu7Gr7wi',
-      date_created: '2019-08-24 08:35:58',
+      date_created: '2019-08-27T05:30:33.434Z',
       date_modified: null,
       street_address: '2222 SE Avocado St',
       city: 'Pheonix',
@@ -15,7 +15,7 @@ function makeUsersArray() {
       id: 2,
       user_name: 'test-user-2',
       password: '$2a$12$PzeNfOF2a94vUPBL7Wg4I.RCZydnhqc8Rehlw1DGkAlbJKu7Gr7wi',
-      date_created: '2019-08-24 08:35:58',
+      date_created: '2019-08-27T05:30:33.434Z',
       date_modified: null,
       street_address: '2222 SE Avocado St',
       city: 'Chicago',
@@ -25,7 +25,7 @@ function makeUsersArray() {
       id: 3,
       user_name: 'test-user-3',
       password: '$2a$12$PzeNfOF2a94vUPBL7Wg4I.RCZydnhqc8Rehlw1DGkAlbJKu7Gr7wi',
-      date_created: '2019-08-24 08:35:58',
+      date_created: '2019-08-27T05:30:33.434Z',
       date_modified: null,
       street_address: '2222 SE Avocado St',
       city: 'Seattle',
@@ -35,7 +35,7 @@ function makeUsersArray() {
       id: 4,
       user_name: 'test-user-4',
       password: '$2a$12$PzeNfOF2a94vUPBL7Wg4I.RCZydnhqc8Rehlw1DGkAlbJKu7Gr7wi',
-      date_created: '2019-08-24 08:35:58',
+      date_created: '2019-08-27T05:30:33.434Z',
       date_modified: null,
       street_address: '2222 SE Avocado St',
       city: 'Burlington',
@@ -64,7 +64,6 @@ function seedUsers(db, users) {
       )
     )
 }
-
 
 module.exports = {
   makeUsersArray,
