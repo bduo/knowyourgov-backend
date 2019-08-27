@@ -4,7 +4,7 @@ const knex = require('knex')
 const app = require('../src/app')
 const helpers = require('./test-helpers')
 
-describe('Gov User Endpoints', () => {
+describe.only('Gov User Endpoint', () => {
   let db
 
   const testUsers = helpers.makeUsersArray()
@@ -24,7 +24,7 @@ describe('Gov User Endpoints', () => {
 
   afterEach('cleanup', () => helpers.cleanTables(db))
 
-  describe(`POST /api/users`, () => {
+  describe('POST /api/users', () => {
     beforeEach('insert users', () => {
       helpers.seedUsers(db, testUsers)
     })
@@ -52,5 +52,53 @@ describe('Gov User Endpoints', () => {
         })
     })
   })
+
+    context(`Password errors`, () => {
+      it('Responds with 400 error when password is less than 8 characters', () => {
+        const testUser = {
+          'user_name': 'testuser',
+          'password': '12345',
+          'street_address': '2222 SE Avocado St',
+          'city': 'Portland',
+          'state_code': 'OR'
+
+        }
+
+        return supertest(app)
+          .post('/api/users')
+          .send(testUser)
+          .expect(400, {error: 'The password must be longer than 8 characters.'})
+      })
+
+      it('Responds with 400 error when password is too long', () => {
+        const testUser = {
+          'user_name': "testuser",
+          'password': '*'.repeat(92),
+          'street_address': '2222 SE Avocado St',
+          'city': 'Portland',
+          'state_code': 'OR'
+        }
+
+        return supertest(app)
+          .post('/api/users')
+          .send(testUser)
+          .expect(400, {error: 'The password must be shorter than 72 characters.'})
+      })
+
+      it('Responds with 400 error when password starts or ends with a space', () => {
+        const testUser = {
+          'user_name': 'testuser',
+          'password': ' P@ssw0rd',
+          'street_address': '2222 SE Avocado St',
+          'city': 'Portland',
+          'state_code': 'OR'
+        }
+
+        return supertest(app)
+          .post('/api/users')
+          .send(testUser)
+          .expect(400, {error: 'Password must not start or end with an empty space.'})
+      })
+    })
   })
 })

@@ -2,7 +2,7 @@ const bcrypt = require('bcryptjs')
 const xss = require('xss')
 const Treeize = require('treeize')
 
-const REGEX_UPPER_LOWER_NUMBER_SPECIAL = /(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&])[\S]+/
+const REGEX_UPPER_LOWER_NUMBER_SPECIAL = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
 
 const GovUsersService = {
     userHasUserName(db, user_name) {
