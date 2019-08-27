@@ -12,7 +12,7 @@
 - `npm test`
 
 **Seeding the database** 
-- `psql -U rod -d knowyourgov -a -f seeds/seed.knowyourgov_tables.sql`
+- `psql -U database-user -d database-name -a -f seeds/seed.knowyourgov_tables.sql`
 
 ## Know Your Gov API Endpoints
 
