@@ -99,6 +99,52 @@ describe.only('Gov User Endpoint', () => {
           .send(testUser)
           .expect(400, {error: 'Password must not start or end with an empty space.'})
       })
+
+      it('responds with 400 error when password is not complex enough', () => {
+        const testUser = {
+          'user_name': 'testuser',
+          'password': 'password',
+          'street_address': '2222 SE Avocado St',
+          'city': 'Portland',
+          'state_code': 'OR'
+        }
+
+        return supertest(app)
+          .post('/api/users')
+          .send(testUser)
+          .expect(400, {error: 'Password must have an upper case, a lower case, a number, and a special character'})
+      })
     })
+
+    context('Registration is valid', () => {
+      it('responds with 201 and username', () => {
+       
+        const testUser = {
+          'id': 5,
+          'user_name': 'testuser',
+          'password': 'P@ssw0rd',
+          'street_address': '2222 SE Avocado St',
+          'city': 'Portland',
+          'state_code': 'OR',
+        }
+
+        return supertest(app)
+          .post('/api/users')
+          .send(testUser)
+          .expect(201) 
+          .expect(res => {
+            expect(res.body).to.have.property('id')
+            expect(res.body.user_name).to.eql(testUser.user_name)
+            expect(res.body).to.not.have.property('password')
+            expect(res.body.street_address).to.eql(testUser.street_address)
+            expect(res.body.city).to.eql(testUser.city)
+            expect(res.body.state_code).to.eql(testUser.state_code)
+            const expectedDate = new Date().toLocaleString('en', { timeZone: 'UTC' });
+            const actualDate = new Date(res.body.date_created).toLocaleString();
+            expect(actualDate).to.eql(expectedDate);
+          })
+      })
+    })
+
   })
 })
